@@ -78,6 +78,7 @@ app.get('/api/:id', (req, res) => {
 
 //serve static assets
 if (process.env.NODE_ENV === 'production') {
+	console.log('active');
 	//set static folder
 	app.use(express.static('client/build'));
 	app.get('*', (req, res) => {
