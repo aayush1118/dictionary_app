@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Word from './components/Word';
 
 function App() {
+	console.log(process.env.PORT);
 	return (
 		<>
 			<h1>{process.env.PORT}</h1>
