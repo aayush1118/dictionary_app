@@ -6,20 +6,17 @@ const axios = require('axios');
 const path = require('path');
 
 //connecting to db
-mongoose.connect(
-	process.env.MONGODB_URI || 'mongodb://localhost/dictionary_app',
-	{
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-	}
-);
+mongoose.connect(process.env.MONGODB_URI, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+});
 
 mongoose.connection.on('connected', () => {
 	console.log('///Mongoose is connected///');
 });
 
 const PORT = 4000 || process.env.PORT;
-console.log(PORT);
+console.log(PORT, process.env.PORT);
 
 const app = express();
 
