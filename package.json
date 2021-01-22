@@ -6,8 +6,6 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"client-build": "cd frontend && npm run build",
 		"start": "node app.js &&  npm run install-client && npm run build",
-		"client": "cd frontend && npm run start",
-		"dev": "npm run client && node app.js",
 		"install-client": "cd frontend && npm install",
 		"heroku-postbuil": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run client-build"
 	},
