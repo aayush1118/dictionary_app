@@ -8,6 +8,8 @@ import { getWords } from '../redux/actions';
 import NewPopup from './NewPopup';
 
 const List = (props) => {
+	console.log(process.env.NODE_ENV);
+	console.log(process.env.PORT);
 	if (props.loaded === false) {
 		props.getWords();
 	}
@@ -107,12 +109,18 @@ const List = (props) => {
 			</>
 		)
 	) : (
-		<header className='header'>
-			<nav className='nav'>
-				<h1>Vocab</h1>
-			</nav>
-			<p>Words List</p>
-		</header>
+		<>
+			<header className='header'>
+				<nav className='nav'>
+					<h1>Vocab</h1>
+				</nav>
+				<p>Words List</p>
+			</header>
+			<button className='create-btn' onClick={togglePopup}>
+				<div className='create'>+</div>
+			</button>
+			{isOpen && <NewPopup handleClose={togglePopup} />}
+		</>
 	);
 };
 //redux functions for state and dispatch

@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const db = require('./models/');
 const axios = require('axios');
+const path = require('path');
 
 //connecting to db
 mongoose.connect(
@@ -18,6 +19,7 @@ mongoose.connection.on('connected', () => {
 });
 
 const PORT = 4000 || process.env.PORT;
+console.log(PORT);
 
 const app = express();
 
@@ -36,12 +38,12 @@ const instance = axios.create({
 });
 
 //routes for home post and id
-app.get('/', async (req, res) => {
+app.get('/api/', async (req, res) => {
 	const results = await db.find({});
 	res.json(results);
 });
 
-app.post('/create', async (req, res) => {
+app.post('/api/create', async (req, res) => {
 	const lang = 'en-us';
 	const input = req.body.input;
 	console.log(input);
@@ -71,15 +73,22 @@ app.post('/create', async (req, res) => {
 	}
 });
 
-app.get('/:id', (req, res) => {
+app.get('/api/:id', (req, res) => {
 	const id = req.params.id;
 	db.findById(id, (err, word) => {
 		res.json(word);
 	});
 });
 
-if (process.env.NODE_ENV === 'produciton') {
+//serve static assets
+if (process.env.NODE_ENV === 'production') {
+	//set static folder
 	app.use(express.static('client/build'));
+	app.get('*', (req, res) => {
+		res.sendFile(
+			path.resolve(__dirname, 'frontend', 'build', 'index.html')
+		);
+	});
 }
 
 app.listen(PORT, () => {

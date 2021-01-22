@@ -24,7 +24,7 @@ const createWordSuccess = () => {
 export const getWords = () => {
 	return (dispatch) => {
 		axios
-			.get('http://localhost:4000/')
+			.get('api/')
 			.then((res) => {
 				const words = res.data;
 				dispatch(fetchWordsSuccess(words));
@@ -36,7 +36,7 @@ export const getWords = () => {
 export const getWord = (id) => {
 	return (dispatch) => {
 		axios
-			.get(`http://localhost:4000/${id}`)
+			.get(`api/${id}`)
 			.then((res) => {
 				const word = res.data;
 				dispatch(fetchWordSuccess(word));
@@ -48,7 +48,7 @@ export const getWord = (id) => {
 export const newWord = (input) => {
 	return (dispatch) => {
 		axios
-			.post('http://localhost:4000/create', { input })
+			.post('api/create', { input })
 			.then(() => {
 				dispatch(createWordSuccess());
 				getWords();

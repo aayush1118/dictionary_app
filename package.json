@@ -1,14 +1,15 @@
 {
 	"name": "dictionary_app",
 	"version": "1.0.0",
-	"description": "",
 	"main": "app.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "cd client && npm run build",
-		"start": "node app.js",
-		"install-client": "cd client && npm install",
-		"heroku-postbuil": "npm run install-client && npm run build"
+		"client-build": "cd frontend && npm run build",
+		"start": "node app.js &&  npm run install-client && npm run build",
+		"client": "cd frontend && npm run start",
+		"dev": "npm run client && node app.js",
+		"install-client": "cd frontend && npm install",
+		"heroku-postbuil": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run client-build"
 	},
 	"author": "aayush jain",
 	"license": "ISC",
@@ -17,5 +18,15 @@
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"mongoose": "^5.11.12"
-	}
+	},
+	"devDependencies": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aayush1118/dictionary_app.git"
+	},
+	"bugs": {
+		"url": "https://github.com/aayush1118/dictionary_app/issues"
+	},
+	"homepage": "https://github.com/aayush1118/dictionary_app#readme",
+	"description": ""
 }

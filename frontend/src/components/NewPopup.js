@@ -26,6 +26,7 @@ const NewPopup = (props) => {
 						value={word}
 						onChange={(e) => setWord(e.target.value)}
 					/>
+					<button type='reset' className='disabled'></button>
 					<span className='form-btn' onClick={props.handleClose}>
 						CANCEL
 					</span>
