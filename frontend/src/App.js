@@ -5,6 +5,8 @@ import Word from './components/Word';
 function App() {
 	return (
 		<>
+			<h1>{process.env.PORT}</h1>
+			<h1>test</h1>
 			<Switch>
 				<Route exact path='/' component={List} />
 				<Route path='/view/:id' component={Word} />
