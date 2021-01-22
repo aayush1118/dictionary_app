@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const db = require('./models/');
 const axios = require('axios');
 const path = require('path');
+require('dotenv').config();
 
 //connecting to db
 mongoose.connect(process.env.MONGODB_URI, {

@@ -94,7 +94,7 @@ const List = (props) => {
 				<main className='main'>
 					{props.data.map((item) => (
 						<div className='listItem' key={item._id}>
-							<Link to={`/view/${item._id}`}>
+							<Link to={`/${item._id}`}>
 								<Item id={item._id}></Item>
 							</Link>
 						</div>
