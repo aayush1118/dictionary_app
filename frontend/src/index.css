@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+:root {
+	--primary: #5d1049;
+	--highlight: #720d5d;
+}
+html {
+	scroll-behavior: smooth;
+}
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a {
+	color: black;
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	background-color: white;
+}
+
+.nav {
+	color: white;
+	padding: 1rem;
+	position: sticky;
+	top: 0;
+}
+
+.nav h1 {
+	font-weight: 400;
+	display: inline;
+}
+.header p {
+	background-color: white;
+	border-radius: 16px 16px 0 0;
+	padding: 1rem;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.main {
+	background-color: #ffffff;
+}
+
+.header {
+	background-color: var(--primary);
+	width: 100vw;
+	position: sticky;
+	top: 0;
+}
+
+.listItem {
+	padding: 1rem;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+	color: #ffffff;
+}
+
+.showCard {
+	padding: 1rem;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.word {
+	font-weight: 400;
+	/* padding: 1rem; */
+	margin-top: 5vh;
+}
+.category {
+	color: grey;
+	font-weight: 400;
+	font-style: italic;
+	margin: 0.5rem 0;
+}
+.definition {
+	margin: 1rem 0;
+}
+.example {
+	margin: 0.5rem 2rem;
+}
+.example li {
+	margin: 0.5rem 0;
+}
+
+.closeBtn {
+	float: right;
+	padding: 1rem;
+}
+
+.listWord {
+	font-weight: 400;
+	font-size: 1.3rem;
+	margin: 0.5rem 0;
+}
+.listCategory {
+	font-weight: 300;
+	color: grey;
+	font-size: 1rem;
+	margin-right: 1ch;
+}
+.listDefinition {
+	display: inline;
+	font-size: 1rem;
+	line-height: 1.3rem;
+}
+.search-btn {
+	color: white;
+	float: right;
+	font-weight: 300;
+	font-size: 1rem;
+	letter-spacing: 0.1rem;
+	cursor: pointer;
+	margin-right: 1rem;
+	background: none;
+	border: none;
+	outline: none;
+}
+.search-btn :focus,
+input {
+	border: none;
+	outline: none;
+}
+input::placeholder {
+	color: #ffffffd7;
+}
+
+.searchBar {
+	height: 3.5rem;
+	overflow: hidden;
+}
+
+input {
+	width: 80%;
+	display: inline;
+	margin: 0.5rem;
+	background-color: var(--primary);
+	height: 90%;
+	color: white;
+	font-size: 1rem;
+}
+
+.close-btn {
+	padding: 1rem;
+	margin: 0;
+}
+
+.create {
+	width: 50%;
+	height: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: 300;
+	line-height: 0;
+	padding: 25% 0;
+	border-radius: 50%;
+	background: var(--highlight);
+	transition: all 0.5s;
+}
+
+.create:hover {
+	background-color: #9e1583;
+}
+.create-btn {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 8rem;
+	border: none;
+	outline: none;
+	background: none;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+
+/* Popup style */
+.popup-box {
+	position: fixed;
+	background: #00000050;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+}
+
+.box {
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	height: auto;
+	max-height: 50vh;
+	margin-top: 40vh;
+	background: #fff;
+	border-radius: 4px;
+	padding: 20px;
+	border: 1px solid #999;
+	overflow: auto;
+}
+
+.newForm p {
+	font-size: 1rem;
+	font-weight: 400;
+	padding: 1rem;
+	font-size: 1.1rem;
+}
+
+.newForm label {
+	font-size: 0.7rem;
+	margin: 0 1rem;
+	color: var(--highlight);
+}
+
+.newForm input {
+	background-color: transparent;
+	border-bottom: 1px var(--primary) solid;
+	margin: 1rem;
+	margin-top: 0;
+	color: black;
+	font-size: 1rem;
+	padding: 0.4rem 0;
+}
+
+.newForm .form-btn {
+	padding: 1rem;
+	color: var(--highlight);
+	float: right;
+	font-size: 0.8rem;
+	cursor: pointer;
+}
