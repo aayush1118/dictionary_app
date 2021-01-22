@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 import WordDetail from './WordDetail';
 
-const Word = (props) => {
+const Word = () => {
 	const match = useRouteMatch();
 	const id = match.params.id;
 
