@@ -7,7 +7,7 @@ function App() {
 		<>
 			<Switch>
 				<Route exact path='/' component={List} />
-				<Route path='/view/:id' component={Word} />
+				<Route path='/:id' component={Word} />
 			</Switch>
 		</>
 	);

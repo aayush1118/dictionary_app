@@ -8,8 +8,6 @@ import { getWords } from '../redux/actions';
 import NewPopup from './NewPopup';
 
 const List = (props) => {
-	console.log(process.env.NODE_ENV);
-	console.log(process.env.PORT);
 	if (props.loaded === false) {
 		props.getWords();
 	}
@@ -75,7 +73,7 @@ const List = (props) => {
 				<main className='main'>
 					{results.map((item) => (
 						<div className='listItem' key={item._id}>
-							<Link to={`/view/${item._id}`}>
+							<Link to={`/${item._id}`}>
 								<Item id={item._id}></Item>
 							</Link>
 						</div>
