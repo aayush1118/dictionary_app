@@ -15,9 +15,8 @@ mongoose.connection.on('connected', () => {
 	console.log('///Mongoose is connected///');
 });
 
-const PORT = 4000 || process.env.PORT;
-console.log(PORT, process.env.PORT);
-
+const PORT = process.env.PORT || 4000;
+console.log(PORT);
 const app = express();
 
 app.use(cors());
