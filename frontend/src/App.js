@@ -7,7 +7,8 @@ function App() {
 		<>
 			<Switch>
 				<Route exact path='/' component={List} />
-				<Route path='/:id' component={Word} />
+				<Route exact path='/:id' component={Word} />
+				<Route render={() => <h1>404: page not found</h1>} />
 			</Switch>
 		</>
 	);
