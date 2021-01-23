@@ -6,7 +6,8 @@ import NewWord from './NewWord';
 const NewPopup = (props) => {
 	const [word, setWord] = useState('');
 	const [loadNewWord, setLoadNewWord] = useState(false);
-	const submit = () => {
+	const submit = (e) => {
+		e.preventDefault();
 		setLoadNewWord(true);
 		setTimeout(() => {
 			props.handleClose();
@@ -17,7 +18,7 @@ const NewPopup = (props) => {
 			<div className='newForm box'>
 				<p>Add to Dictionary</p>
 
-				<form>
+				<form onSubmit={submit}>
 					<label htmlFor='newWord'>New Word</label>
 					<input
 						type='text'

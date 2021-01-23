@@ -11,7 +11,6 @@ const List = (props) => {
 	if (props.loaded === false) {
 		props.getWords();
 	}
-
 	const [searchBar, setSearchBar] = useState(false);
 	const [query, setQuery] = useState('');
 	const [results, setResults] = useState([]);
@@ -33,12 +32,13 @@ const List = (props) => {
 	const getResults = (e) => {
 		setQuery(e.target.value);
 		const result = props.data.filter(
-			(element) => element.word.search(query) !== -1
+			(element) =>
+				element.word.toLowerCase().search(query.toLowerCase()) !== -1
 		);
 		setResults(result);
 	};
+	//get words from store
 	useEffect(() => {
-		//get words from store
 		props.getWords();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
