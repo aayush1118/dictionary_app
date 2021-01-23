@@ -23,6 +23,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+//reset db
+db.remove({}, () => {
+	db.create({
+		word: 'hello',
+		category: 'interjection',
+		definitions: 'used as a greeting or to begin a phone conversation',
+		example: [
+			{
+				text: 'hello there, Katie!',
+			},
+		],
+	});
+});
+
 //initiating axios func
 
 const instance = axios.create({
